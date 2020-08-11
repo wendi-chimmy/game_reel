@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Game Reel</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        
+        <div align="center">
+            
+            
+            <h1>Game Simulator</h1><br>
+            
+            
+            <div class="btn-group" align="center">
+                <button class="btn btn-dark btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sport
+                </button>
+                <div id="sports" class="dropdown-menu">
+                    <option value="1">Basketball</option>
+                    <option value="2">Futbol</option>
+                </div>
+            </div>
+            
+            <br><br>
+        
+            <div id="futbolOptions">
+        <div class="btn-group" align="center" data-spy="scroll" data-target=".navbar" data-offset="50">
+            <button class="btn btn-danger btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Away Team
+            </button>
+            <div id="futbolAwayTeam" class="dropdown-menu">
+                ...
+            </div>
+        </div>
+        
+        <div class="btn-group" align="center">
+            <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Home Team
+            </button>
+            <div id="futbolHomeTeam" class="dropdown-menu">
+                ...
+            </div>
+        </div>
+            
+            <br><br>
+    
+        </div>
+            
+            <div id="basketballOptions">
+        <div class="btn-group" align="center">
+            <button class="btn btn-warning btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Away Team
+            </button>
+            <div id="awayTeam" class="dropdown-menu">
+                 <option>Atlanta Hawks</option>options>
+                <option>Boston Celtics</option>
+<!--
+                <option>Charlotte Hornets</option>
+                <option>Chicago Bulls</option>
+                <option>Cleveland Cavaliers</option>
+                <option>Detroit Pistons</option>
+                <option>Indiana Pacers</option>
+                <option>Miami Heat</option>
+                <option>Milwaukee Bucks</option>
+                <option>Brooklyn Nets</option>
+                <option>New York Knicks</option>
+                <option>Orlando Magic<option>
+                <option>Philadelphia 76ers<option>
+                <option>Toronto Raptors<option>
+                <option>Washington Wizards<option>
+                <option>Dallas Mavericks<option>
+                <option>Denver Nuggets<option>
+                <option>Golden State Warriors<option>
+                <option>Houston Rockets<option>
+                <option>Los Angeles Clippers<option>
+                <option>Los Angeles Lakers<option>
+                <option>Memphis Grizzlies<option>
+                <option>Minnesota Timberwolves<option>
+                <option>New Orleans Pelicans<option>
+                <option>Oklahoma City Thunder<option>
+                <option>Phoenix Suns<option>
+                <option>Portland Trail Blazers<option>
+                <option>Sacramento Kings<option>
+                <option>San Antonio Spurs<option>
+                <option>Utah Jazz<option>
+-->
+            </div>
+        </div>
+        
+        <div class="btn-group" align="center">
+            <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Home Team
+            </button>
+            <div id="homeTeam" class="dropdown-menu" data-spy="scroll" data-offset="50">
+                <option>Atlanta Hawks</option>options>
+                <option>Boston Celtics</option>
+<!--
+                <option>Charlotte Hornets</option>
+                <option>Chicago Bulls</option>
+                <option>Cleveland Cavaliers</option>
+                <option>Detroit Pistons</option>
+                <option>Indiana Pacers</option>
+                <option>Miami Heat</option>
+                <option>Milwaukee Bucks</option>
+                <option>Brooklyn Nets</option>
+                <option>New York Knicks</option>
+                <option>Orlando Magic<option>
+                <option>Philadelphia 76ers<option>
+                <option>Toronto Raptors<option>
+                <option>Washington Wizards<option>
+                <option>Dallas Mavericks<option>
+                <option>Denver Nuggets<option>
+                <option>Golden State Warriors<option>
+                <option>Houston Rockets<option>
+                <option>Los Angeles Clippers<option>
+                <option>Los Angeles Lakers<option>
+                <option>Memphis Grizzlies<option>
+                <option>Minnesota Timberwolves<option>
+                <option>New Orleans Pelicans<option>
+                <option>Oklahoma City Thunder<option>
+                <option>Phoenix Suns<option>
+                <option>Portland Trail Blazers<option>
+                <option>Sacramento Kings<option>
+                <option>San Antonio Spurs<option>
+                <option>Utah Jazz<option>
+-->
+            </div>
+        </div>
+            
+            <br><br>
+
+    
+        </div>
+        
+        </div>
+        
+        <script>
+            // Create a game simulation for different sports. Game simulation will give random point scores over the span of an officiated game ending with a winner.
+            
+            let sports = ["Futbol", "Basketball"];
+            let chosenSport = "Futbol";
+            
+            let futbolTeams = ["Basel (SUI)", "Copenhagen (DEN)", "Frankfurt (GER)", "Getafe (ESP)", "Internazionale (ITA)", "Istanbul Basaksehir", "LASK (AUT)", "Leverkusen (GER)", "Man. United (ENG)", "Olympiacos (GRE)", "Rangers (SCO)", "Roma (ITA)", "Sevilla (ESP)", "Shakhtar Donetsk (UKR)", "Wolfsburg (GER)", "Wolves (ENG)"];
+            
+            let basketballTeams = ["Atlanta Hawks", "Boston Celtics", "Charlotte Hornets", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Miami Heat", "Milwaukee Bucks", "Brooklyn Nets", "New York Knicks", "Orlando Magic", "Philadelphia 76ers", "Toronto Raptors", "Washington Wizards", "Dallas Mavericks", "Denver Nuggets", "Golden State Warriors", "Houston Rockets", "Los Angeles Clippers", "Los Angeles Lakers", "Memphis Grizzlies", "Minnesota Timberwolves", "New Orleans Pelicans", "Oklahoma City Thunder", "Phoenix Suns", "Portland Trail Blazers", "Sacramento Kings", "San Antonio Spurs", "Utah Jazz"];
+            
+            function random(items){
+                var item = items[Math.floor(Math.random() * items.length)]; 
+                return item;
+             }
+            
+            
+            
+            
+            
+            
+            
+            function randomMatchUp(teamsArray){
+                let awayTeam = random(teamsArray);
+                let homeTeam = random(teamsArray);
+                
+                if(awayTeam == homeTeam){
+                    awayTeam = random(teamsArray);
+                }
+                
+                return [awayTeam, homeTeam];
+            }
+            
+            
+            //*****************************************************
+            
+            let basketballScores = [1,2,3,0,0,1,2,3,0,0,1,2,3,0,0,1,2,3,0,0,1,2,3,0,0];
+            let futbolScores =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]; 
+            
+            basketBallSuitCase = ['basketball', basketballScores, basketballTeams, randomMatchUp(basketballTeams)];
+            futbolSuitCase = ['futbol', futbolScores, futbolTeams, randomMatchUp(futbolTeams)];
+            
+            function runGame(suitCase){
+                let homeTeam = suitCase[2][0];
+                let awayTeam = suitCase[2][1];
+                
+                
+                let awayScore = 0;
+                 let homeScore = 0;
+                 let counter = 0;
+                let newCounter = 0;
+                //Amount of Possesions
+                let posCounter;
+                
+                if(suitCase[0] == 'basketball'){
+                    posCounter = 144;
+                }else{
+                    posCounter = 90
+                }
+                
+                     while(counter < posCounter ){ // Create conditional that accounts for basketball teams going into overtime; a basketball team cannot tie
+                       counter++
+                      awayScore = awayScore + random(suitCase[1]);
+                      homeScore = homeScore + random(suitCase[1]);
+                         
+                      if(counter == posCounter && suitCase[0] == 'basketball'){
+                          while(newCounter < 5 && awayScore == homeScore){
+                            newCounter++
+                            awayScore = awayScore + random(suitCase[1][0]);
+                            homeScore = homeScore + random(suitCase[1][1]); 
+                          }
+                      }
+                         setTimeout(function(){ console.log(counter)}, 3000);
+                    }
+                
+            
+
+                    if(awayScore > homeScore){
+                       return `(${homeTeam}: ${homeScore} vs ${awayTeam}: ${awayScore}) Away Team wins!`;
+                    }else if(awayScore < homeScore){
+                       return `(Home: ${homeTeam} ${homeScore} - Away: ${awayTeam} ${awayScore}) Home Team wins!`;
+                    }else{
+                        return `${homeTeam}: ${awayTeam} Tie Game!` ;
+                    }
+            }
+            
+            
+            
+            console.log(runGame(futbolSuitCase)); //Random Scores & Teams stay the same because we are grabbing them before going into the function
+            
+        
+        </script>
+    </body>
+
+</html>
